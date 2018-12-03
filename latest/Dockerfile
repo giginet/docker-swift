@@ -6,6 +6,7 @@ LABEL Description="Docker Container for the Apple's Swift programming language"
 RUN apt-get -q update && \
     apt-get -q install -y \
     make \
+    cmake \
     libc6-dev \
     clang-3.8 \
     curl \
@@ -18,6 +19,7 @@ RUN apt-get -q update && \
     git \
     libcurl4-openssl-dev \
     pkg-config \
+    libblocksruntime-dev \
     && update-alternatives --quiet --install /usr/bin/clang clang /usr/bin/clang-3.8 100 \
     && update-alternatives --quiet --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.8 100 \
     && rm -r /var/lib/apt/lists/*    
